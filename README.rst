@@ -45,7 +45,7 @@ PEP 600 has been designed to be "future-proof" and does not enforce specific sym
 It only states that a wheel tagged ``manylinux_x_y`` shall work on any distro based on ``glibc>=x.y``.
 The manylinux project supports:
 
-- ``manylinux_2_24`` images for ``x86_64``, ``i686``, ``aarch64``, ``ppc64le`` and ``s390x``.
+- ``manylinux_2_27`` images for ``x86_64``, ``i686``, ``aarch64``, ``ppc64le`` and ``s390x``.
 
 - ``manylinux_2_28`` images for ``x86_64``, ``aarch64`` and ``ppc64le``.
 
@@ -110,14 +110,14 @@ manylinux_2_28 (AlmaLinux 8 based)
 - aarch64 image: ``quay.io/pypa/manylinux_2_28_aarch64``
 - ppc64le image: ``quay.io/pypa/manylinux_2_28_ppc64le``
 
-manylinux_2_24 (Debian 9 based)
+manylinux_2_27 (Debian 9 based)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- x86_64 image: ``quay.io/pypa/manylinux_2_24_x86_64``
-- i686 image: ``quay.io/pypa/manylinux_2_24_i686``
-- aarch64 image: ``quay.io/pypa/manylinux_2_24_aarch64``
-- ppc64le image: ``quay.io/pypa/manylinux_2_24_ppc64le``
-- s390x image: ``quay.io/pypa/manylinux_2_24_s390x``
+- x86_64 image: ``quay.io/pypa/manylinux_2_27_x86_64``
+- i686 image: ``quay.io/pypa/manylinux_2_27_i686``
+- aarch64 image: ``quay.io/pypa/manylinux_2_27_aarch64``
+- ppc64le image: ``quay.io/pypa/manylinux_2_27_ppc64le``
+- s390x image: ``quay.io/pypa/manylinux_2_27_s390x``
 
 
 manylinux2014 (CentOS 7 based)

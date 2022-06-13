@@ -1,6 +1,6 @@
 # default to latest supported policy, x86_64
 ARG BASEIMAGE=amd64/debian:9
-ARG POLICY=manylinux_2_24
+ARG POLICY=manylinux_2_27
 ARG PLATFORM=x86_64
 ARG DEVTOOLSET_ROOTPATH=
 ARG LD_LIBRARY_PATH_ARG=
@@ -133,9 +133,9 @@ FROM build_cpython AS build_cpython310
 COPY build_scripts/cpython-pubkey-310-311.txt /build_scripts/cpython-pubkeys.txt
 RUN manylinux-entrypoint /build_scripts/build-cpython.sh 3.10.5
 
-FROM build_cpython AS build_cpython311
-COPY build_scripts/cpython-pubkey-310-311.txt /build_scripts/cpython-pubkeys.txt
-RUN manylinux-entrypoint /build_scripts/build-cpython.sh 3.11.0b3
+#FROM build_cpython AS build_cpython311
+#COPY build_scripts/cpython-pubkey-310-311.txt /build_scripts/cpython-pubkeys.txt
+#RUN manylinux-entrypoint /build_scripts/build-cpython.sh 3.11.0b3
 
 FROM build_cpython AS all_python
 COPY build_scripts/install-pypy.sh \
@@ -150,7 +150,7 @@ COPY --from=build_cpython37 /opt/_internal /opt/_internal/
 COPY --from=build_cpython38 /opt/_internal /opt/_internal/
 COPY --from=build_cpython39 /opt/_internal /opt/_internal/
 COPY --from=build_cpython310 /opt/_internal /opt/_internal/
-COPY --from=build_cpython311 /opt/_internal /opt/_internal/
+#COPY --from=build_cpython311 /opt/_internal /opt/_internal/
 RUN manylinux-entrypoint /build_scripts/finalize-python.sh
 
 
